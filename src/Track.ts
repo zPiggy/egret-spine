@@ -27,7 +27,8 @@ namespace spine {
     export class Track extends EventEmitter<SpineEvent> {
         public readonly trackID: number;
         public readonly skelAnimation: SkeletonAnimation;
-        private stateListener: AnimationStateListener;
+        // private stateListener: AnimationStateListener;
+        private stateListener: AnimationStateListener2;
         private trackEntry: TrackEntry | undefined;
         private animations: AnimationRecord[] = [];
         private disposed: boolean = false;
