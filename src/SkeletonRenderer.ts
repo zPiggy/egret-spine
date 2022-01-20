@@ -27,6 +27,11 @@ namespace spine {
         return skelJson.readSkeletonData(jsonData);
     }
 
+    export function createSkeletonDataByBinary(binary: Uint8Array, atlas: TextureAtlas) {
+        const skelJson = new SkeletonBinary(new AtlasAttachmentLoader(atlas));
+        return skelJson.readSkeletonData(binary);
+    }
+
     export function createTextureAtlas(atlasData: string, textures: Record<string, egret.Texture>) {
         return new TextureAtlas(atlasData, (file: string) => {
             return new EgretTexture(textures[file]);
