@@ -405,9 +405,10 @@ module spine {
 					mesh.updateUVs();
 					mesh.hullLength = hullLength << 1;
 					if (nonessential) {
-						mesh.edges = edges;
-						mesh.width = width * scale;
-						mesh.height = height * scale;
+						// 3.6 无用属性
+						// mesh.edges = edges;
+						// mesh.width = width * scale;
+						// mesh.height = height * scale;
 					}
 					return mesh;
 				}
@@ -430,8 +431,9 @@ module spine {
 					ColorUtils.rgba8888ToColor(color, mesh.color);
 					// mesh.inheritDeform = inheritDeform;		// 在 new LinkedMesh() 最后一个参数设置了
 					if (nonessential) {
-						mesh.width = width * scale;
-						mesh.height = height * scale;
+						// 3.6 无用属性
+						// mesh.width = width * scale;
+						// mesh.height = height * scale;
 					}
 					this.linkedMeshes.push(new LinkedMesh(mesh, skinName, slotIndex, parent, inheritDeform));
 					return mesh;
@@ -944,7 +946,7 @@ module spine {
 	}
 
 	// 追加Color工具类
-	class ColorUtils {
+	export class ColorUtils {
 		static rgba8888ToColor(value: number, outColor?: Color): Color {
 			outColor = outColor || new Color();
 
