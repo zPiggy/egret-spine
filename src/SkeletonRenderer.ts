@@ -101,10 +101,8 @@ namespace spine {
         }
 
         public renderSlot() {
-            // const boneActive = this.slot.bone.active;
-            // const attachment = this.slot.attachment;
-            const boneActive = true;
-            const attachment = this.slot["attachment"];
+            const boneActive = true;    // 3.6 没有active属性
+            const attachment = this.slot.getAttachment();
 
             if (boneActive && attachment) {
                 if (attachment === this.attachment) return;
